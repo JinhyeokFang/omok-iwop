@@ -1,0 +1,12 @@
+{
+  "name": "omok-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "~4.16.0",
+    "socket.io": "^2.1.1"
+  }
+}
