@@ -2,21 +2,9 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-
 var room = [];
-
 app.use(express.static('dist'));
-
 server.listen(8080);
-
-
-
-
-
-
-
-
-
 io.on('connection', socket => {
   socket.emit('getRoomList', { list: room });
   socket.on('join', data => {
@@ -91,28 +79,6 @@ io.on('connection', socket => {
     io.emit('getRoomList', { list: room });
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let getBlockID = (x, y) => { return y + 19 * x + 1 };
 let getRoomIndex = roomId => room.findIndex(room => room.roomId == roomId);                                                                                                                                                                                        
 let checkGameIsEnded = (x, y, turn, roomId) => {
